@@ -93,6 +93,7 @@ export function SidebarNavigation({ session, logoUrl, tenantSelectorSlot, settin
       settingsSlot={settingsSlot}
       onLocaleChange={handleLocaleChange}
       appBadge="SUITE"
+      onLogin={() => { window.location.href = '/login'; }}
       onSearchTrigger={() => {
         window.dispatchEvent(new CustomEvent('abd-command-palette-open'));
       }}
