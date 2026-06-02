@@ -92,6 +92,7 @@ export function SidebarNavigation({ session, logoUrl, tenantSelectorSlot, settin
       tenantSelectorSlot={tenantSelectorSlot}
       settingsSlot={settingsSlot}
       onLocaleChange={handleLocaleChange}
+      appBadge="SUITE"
       onSearchTrigger={() => {
         window.dispatchEvent(new CustomEvent('abd-command-palette-open'));
       }}

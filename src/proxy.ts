@@ -5,7 +5,7 @@ import { routing } from './i18n/routing';
 const intlMiddleware = createMiddleware(routing);
 
 /**
- * 🛰️ ABDAnalytics Proxy Guard
+ * 🛰️ ABDLanding Proxy Guard
  * Next.js 16 centralized ecosystem proxy guard utilizing @ajabadia/satellite-sdk.
  */
 export const proxy = withIndustrialAuth({

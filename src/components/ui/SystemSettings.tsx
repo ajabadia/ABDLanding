@@ -32,11 +32,11 @@ export function SystemSettings({ isAuthenticated = false }: SystemSettingsProps)
   };
 
   const handleLogin = () => {
-    window.location.href = 'http://localhost:3400/login';
+    window.location.href = '/login';
   };
 
   const handleLogout = () => {
-    window.location.href = 'http://localhost:3400';
+    window.location.href = '/api/auth/logout';
   };
 
   return (
