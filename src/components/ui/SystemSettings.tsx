@@ -48,7 +48,7 @@ export function SystemSettings({ isAuthenticated = false }: SystemSettingsProps)
       isAuthenticated={isAuthenticated}
       onLogin={handleLogin}
       onLogout={handleLogout}
-      versionSignature="ABD_LOGS_V1.0"
+      versionSignature="ABD_LANDING_V1.0"
     />
   );
 }

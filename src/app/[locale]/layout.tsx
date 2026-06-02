@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "sonner";
+import { Suspense } from "react";
 import NextTopLoader from "nextjs-toploader";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import { SystemSettings } from "@/components/ui/SystemSettings";

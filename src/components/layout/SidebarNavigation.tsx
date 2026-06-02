@@ -4,7 +4,7 @@ import React from 'react';
 import { Home, Cpu } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { SmartNavbar } from '@ajabadia/ecosystem-widgets';
+import { SmartNavbar, buildSidebarLinks } from '@ajabadia/ecosystem-widgets';
 
 interface UserSession {
   authenticated: boolean;
@@ -43,7 +43,7 @@ export function SidebarNavigation({ session, logoUrl, tenantSelectorSlot, settin
   const isLoggedIn = session.authenticated && !!session.user;
   const user = session.user;
 
-  const links = [
+  const allLinks = [
     {
       href: '/',
       label: locale === 'es' ? 'Inicio' : 'Home',
@@ -54,10 +54,13 @@ export function SidebarNavigation({ session, logoUrl, tenantSelectorSlot, settin
       label: locale === 'es' ? 'Servicios' : 'Services',
       icon: <Cpu size={14} />
     }
-  ];
+  ] as const;
+
+  const links = buildSidebarLinks(allLinks, user?.role, isLoggedIn);
 
   const finalLogoUrl = logoUrl || (isLoggedIn && user?.branding ? user.branding.logoUrl : null);
 
+  // Preserve query params across navigation
   const transformHref = (href: string) => {
     return queryStr ? `${href}?${queryStr}` : href;
   };
@@ -102,3 +105,4 @@ export function SidebarNavigation({ session, logoUrl, tenantSelectorSlot, settin
     />
   );
 }
+
