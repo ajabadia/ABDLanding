@@ -1,0 +1,40 @@
+{
+  "common": {
+    "appTitle": "ABD Suite",
+    "close": "Cerrar",
+    "settings": "Configuración",
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "menuTitle": "Menú Principal",
+    "homeMenu": "Inicio",
+    "featuresMenu": "Servicios",
+    "aboutMenu": "Nosotros"
+  },
+  "home": {
+    "status": "Ecosistema ABD Suite: Operativo",
+    "tagline": "La suite empresarial multipropósito de alto rendimiento para la gobernanza, telemetría y gestión de su organización.",
+    "accessControlPlane": "EXPLORAR ECOSISTEMA",
+    "engine": "Motor OMEGA",
+    "style": "Tech-Noir v1.2",
+    "version": "v1.0.0-PROD",
+    "coreLabel": "Núcleo",
+    "logicLabel": "Lógica",
+    "styleLabel": "Estilo",
+    "tenants": "SUITE"
+  },
+  "widgets": {
+    "tenant_selector_select": "Seleccionar organización",
+    "tenant_selector_title": "ORGANIZACIÓN",
+    "tenant_selector_search": "Buscar...",
+    "tenant_selector_empty": "Sin resultados",
+    "tenant_selector_active": "Organización Activa",
+    "system_settings_title": "CONFIGURACIÓN DEL SISTEMA",
+    "system_settings_close": "Cerrar",
+    "system_settings_language": "IDIOMA",
+    "system_settings_theme": "TEMA",
+    "system_settings_theme_light": "CLARO",
+    "system_settings_theme_dark": "OSCURO",
+    "system_settings_theme_system": "SISTEMA",
+    "system_settings_logout": "Cerrar Sesión"
+  }
+}
