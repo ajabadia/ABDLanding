@@ -6,13 +6,12 @@ import { useLocale } from 'next-intl';
 import { CommandPalette, Command } from '@ajabadia/ecosystem-widgets';
 import { Home, Cpu, Globe, LogOut, Settings } from 'lucide-react';
 
-export function LogsCommandPalette() {
+export function LandingCommandPalette() {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
 
   const commands: Command[] = [
-    // Navigation Category
     {
       id: 'nav-home',
       title: locale === 'es' ? 'Inicio' : 'Home',
@@ -35,7 +34,6 @@ export function LogsCommandPalette() {
         router.push('#servicios');
       }
     },
-    // Configuration / Action Category
     {
       id: 'action-language',
       title: locale === 'es' ? 'Switch to English' : 'Cambiar a Español',

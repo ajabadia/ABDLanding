@@ -116,7 +116,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <HeroHeader
           statusText={h('status')}
           title={
-            <>{'ABD'} <span className="text-[#2dd4bf]">{h('tenants')}</span></>
+            <>{'ABD'} <span className="text-primary">{h('tenants')}</span></>
           }
           description={h('tagline')}
         />
@@ -127,7 +127,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <section aria-label={locale === 'es' ? 'Tus Aplicaciones Autorizadas' : 'Your Authorized Applications'}>
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-border/60">
                 <div className="flex flex-col gap-1">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#2dd4bf]">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary">
                     {locale === 'es' ? '— Acceso Concedido' : '— Access Granted'}
                   </p>
                   <h2 className="text-lg font-black uppercase tracking-wider">
@@ -135,7 +135,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </h2>
                 </div>
                 <div className="flex items-center gap-3 px-4 py-2 bg-secondary/10 border border-border/80 rounded-lg w-fit">
-                  <Building2 className="w-4 h-4 text-[#2dd4bf]" />
+                  <Building2 className="w-4 h-4 text-primary" />
                   <div className="flex flex-col">
                     <span className="font-mono text-[8px] uppercase tracking-widest text-muted-foreground">
                       {locale === 'es' ? 'ORGANIZACIÓN' : 'ORGANIZATION'}
@@ -159,7 +159,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         aria-label={`${locale === 'es' ? 'Acceder a' : 'Access'} ${app.name}`}
                       >
                         <div className="flex items-start justify-between">
-                          <div className="p-2.5 bg-secondary/10 border border-border text-[#2dd4bf] w-fit rounded-lg group-hover:border-primary/40 transition-colors">
+                          <div className="p-2.5 bg-secondary/10 border border-border text-primary w-fit rounded-lg group-hover:border-primary/40 transition-colors">
                             <Icon className="w-5 h-5" />
                           </div>
                           <span className="font-mono text-[8px] uppercase tracking-widest text-emerald-500/80 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
@@ -231,10 +231,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         className="p-6 bg-card border border-border rounded-xl flex flex-col gap-4 opacity-85 hover:opacity-100 hover:border-border/80 transition-all duration-300"
                       >
                         <div className="flex items-start justify-between">
-                          <div className="p-2.5 bg-secondary/10 border border-border text-[#2dd4bf] w-fit rounded-lg">
+                          <div className="p-2.5 bg-secondary/10 border border-border text-primary w-fit rounded-lg">
                             <Icon className="w-5 h-5" />
                           </div>
-                          <span className="font-mono text-[8px] uppercase tracking-widest text-[#2dd4bf]/80 bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 px-2 py-0.5 rounded-full">
+                          <span className="font-mono text-[8px] uppercase tracking-widest text-primary/80 bg-primary/10 border border-primary/20 px-2 py-0.5 rounded-full">
                             {locale === 'es' ? 'Disponible' : 'Available'}
                           </span>
                         </div>

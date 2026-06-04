@@ -11,4 +11,10 @@ const handler = createAuthRouteHandler({
   jwtSecret: process.env.AUTH_JWT_SECRET || 'build-time-placeholder-secret',
 });
 
-export { handler as GET, handler as POST };
+export async function GET(request: any, context: any) {
+  return handler(request);
+}
+
+export async function POST(request: any, context: any) {
+  return handler(request);
+}

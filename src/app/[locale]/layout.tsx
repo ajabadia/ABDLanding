@@ -6,7 +6,7 @@ import NextTopLoader from "nextjs-toploader";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import { SystemSettings } from "@/components/ui/SystemSettings";
 import { TenantSelector } from "@/components/ui/TenantSelector";
-import { LogsCommandPalette } from "@/components/layout/LogsCommandPalette";
+import { LandingCommandPalette } from "@/components/layout/LandingCommandPalette";
 
 import { getIndustrialSession, resolveTenantBranding } from '@ajabadia/satellite-sdk';
 
@@ -35,10 +35,10 @@ export default async function LocaleLayout({
         <SidebarNavigation
           session={session}
           logoUrl={branding?.logoUrl || "/favicon.svg"}
-          tenantSelectorSlot={<TenantSelector sessionUser={session?.user} />}
+          tenantSelectorSlot={session.authenticated ? <TenantSelector sessionUser={session?.user} /> : undefined}
           settingsSlot={<SystemSettings isAuthenticated={session.authenticated} />}
         />
-        <LogsCommandPalette />
+        <LandingCommandPalette />
 
         {children}
         <Toaster
