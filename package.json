@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3399 --webpack",
+    "dev": "next dev -p 5000 --webpack",
     "build": "next build --webpack",
-    "start": "next start -p 3399",
+    "start": "next start -p 5000",
     "lint": "eslint",
     "full-audit": "powershell -File ./scripts/abd-audit.ps1",
     "test": "vitest run",
@@ -14,7 +14,8 @@
   "pnpm": {
     "onlyBuiltDependencies": [],
     "overrides": {
-      "@ajabadia/ecosystem-widgets": "link:../ABDEcosystemWidgets"
+      "@ajabadia/ecosystem-widgets": "link:../ABDEcosystemWidgets",
+      "@ajabadia/satellite-sdk": "link:../ABDSatelliteSDK"
     }
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "@ajabadia/styles": "^1.0.15",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "mongoose": "^9.6.2",
     "lucide-react": "^1.16.0",
     "next": "16.2.6",
     "next-intl": "^4.12.0",
