@@ -10,7 +10,8 @@ import {
   ArrowRight,
   ShieldCheck,
   Building2,
-  LogIn
+  LogIn,
+  FolderOpen
 } from 'lucide-react';
 import { HeroHeader } from '@ajabadia/styles';
 import { GlobalFooter } from '@ajabadia/ecosystem-widgets';
@@ -55,6 +56,16 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
     description: locale === 'es'
       ? 'Registro de auditoría inmutable y trazabilidad de eventos a escala empresarial.'
       : 'Immutable audit log and enterprise-scale event traceability.',
+    status: locale === 'es' ? 'Operativo' : 'Operational',
+  },
+  {
+    id: 'files',
+    href: `https://files.abdia.es`,
+    icon: FolderOpen,
+    name: 'ABD Files',
+    description: locale === 'es'
+      ? 'Gestor documental y almacenamiento polimórfico seguro con control de retención y versionado.'
+      : 'Secure document management and polymorphic storage with retention control and versioning.',
     status: locale === 'es' ? 'Operativo' : 'Operational',
   },
   {
