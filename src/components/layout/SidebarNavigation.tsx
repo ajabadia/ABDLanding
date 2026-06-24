@@ -1,5 +1,15 @@
 'use client';
 
+/**
+ * @purpose Renderiza un componente de navegación lateral con enlaces personalizados para el usuario y maneja cambios de idioma.
+ * @purpose_en Renders a sidebar navigation component with user-specific links and handles locale changes.
+ * @refactorable true (contains too many state variables and UI parts)
+ * @classification UI Component
+ * @complexity Medium
+ * @fingerprint exports:1,imports:5,sig:wwhxde
+ * @lastUpdated 2026-06-21T19:06:30.531Z
+ */
+
 import React from 'react';
 import { Home, Cpu } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';

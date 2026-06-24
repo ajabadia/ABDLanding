@@ -1,4 +1,15 @@
+/**
+ * @purpose Gestiona rutas de autenticación para manejo de sesiones, salida y llamada de callback federado dinámicamente.
+ * @purpose_en Manages authentication routes for session handling, logout, and federated callback dynamically.
+ * @refactorable false
+ * @classification Business Service
+ * @complexity Low
+ * @fingerprint exports:2,imports:2,sig:17vhw9w
+ * @lastUpdated 2026-06-23T23:04:45.322Z
+ */
+
 import { createAuthRouteHandler } from '@ajabadia/satellite-sdk';
+import { NextRequest } from 'next/server';
 
 /**
  * 🛰️ Catch-All SSO Auth Route Handler
@@ -11,10 +22,10 @@ const handler = createAuthRouteHandler({
   jwtSecret: process.env.AUTH_JWT_SECRET || 'build-time-placeholder-secret',
 });
 
-export async function GET(request: any, context: any) {
+export async function GET(request: NextRequest) {
   return handler(request);
 }
 
-export async function POST(request: any, context: any) {
+export async function POST(request: NextRequest) {
   return handler(request);
 }

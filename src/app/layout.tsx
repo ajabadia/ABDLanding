@@ -1,8 +1,24 @@
+/**
+ * @purpose Renderiza el layout raíz para la aplicación ABDLanding, proporcionando datos de ubicación y sesión a los componentes hijos.
+ * @purpose_en Renders the root layout for the ABDLanding application, providing locale and session data to child components.
+ * @refactorable false
+ * @classification UI Component
+ * @complexity Medium
+ * @fingerprint exports:2,imports:7,sig:l5mqsl
+ * @lastUpdated 2026-06-21T16:08:11.004Z
+ */
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
-import { getIndustrialSession, BrandingStyles } from "@ajabadia/satellite-sdk";
+import { getIndustrialSession, BrandingStyles, configureLogger } from "@ajabadia/satellite-sdk";
 import { SessionProvider } from "@ajabadia/satellite-sdk/client";
+
+configureLogger({
+  endpoint: process.env.LOGS_SERVICE_URL || 'http://localhost:5003/api/logs',
+  token: process.env.LOGS_SECRET_TOKEN,
+  appId: 'ABDLanding',
+});
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 import "./globals.css";

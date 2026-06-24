@@ -1,3 +1,13 @@
+/**
+ * @purpose Gestiona configuraciones de solicitud localizadas para internacionalización en la aplicación ABDLanding.
+ * @purpose_en Manages locale-specific request configurations for internationalization in the ABDLanding application.
+ * @refactorable false
+ * @classification Custom Hook
+ * @complexity Low
+ * @fingerprint exports:0,imports:2,sig:15kwxt7
+ * @lastUpdated 2026-06-22T06:28:43.275Z
+ */
+
 import { getRequestConfig } from 'next-intl/server';
 import { routing } from './routing';
 

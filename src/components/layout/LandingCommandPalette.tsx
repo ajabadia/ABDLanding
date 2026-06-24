@@ -1,5 +1,15 @@
 'use client';
 
+/**
+ * @purpose Renderiza una pestaña de comandos con opciones de navegación y configuración en la aplicación ABDLanding.
+ * @purpose_en Renders a command palette with navigation and settings options in the ABDLanding application.
+ * @refactorable false
+ * @classification UI Component
+ * @complexity Low
+ * @fingerprint exports:1,imports:5,sig:104dngr
+ * @lastUpdated 2026-06-22T06:28:19.517Z
+ */
+
 import React from 'react';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { useLocale } from 'next-intl';

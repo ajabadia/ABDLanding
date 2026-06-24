@@ -1,3 +1,13 @@
+/**
+ * @purpose Renderiza una página de aterrizaje para la aplicación ABDSuite, mostrando varias aplicaciones suite con sus descripciones y estatus.
+ * @purpose_en Renders a landing page for the ABDSuite application, displaying various suite apps with their descriptions and statuses.
+ * @refactorable true (contains too many state variables and UI parts)
+ * @classification UI Component
+ * @complexity Medium
+ * @fingerprint exports:1,imports:6,sig:9cfuhe
+ * @lastUpdated 2026-06-22T06:28:15.654Z
+ */
+
 import { getTranslations } from 'next-intl/server';
 import {
   BarChart3,

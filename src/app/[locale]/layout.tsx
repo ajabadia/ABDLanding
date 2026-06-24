@@ -1,3 +1,13 @@
+/**
+ * @purpose Renderiza el layout para la aplicación ABDLanding, incluyendo una navegación lateral, un menú de comandos y notificaciones emergentes.
+ * @purpose_en Renders the layout for the ABDLanding application, including a sidebar navigation, command palette, and toaster notifications.
+ * @refactorable false
+ * @classification UI Component
+ * @complexity Medium
+ * @fingerprint exports:1,imports:10,sig:oqsc0b
+ * @lastUpdated 2026-06-21T16:08:18.157Z
+ */
+
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "sonner";

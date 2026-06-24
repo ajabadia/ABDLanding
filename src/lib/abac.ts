@@ -1,3 +1,13 @@
+/**
+ * @purpose Valida que el usuario tenga las permisiones necesarias para realizar una acción sobre un recurso utilizando ABAC.
+ * @purpose_en Validates that a user has the necessary permissions to perform an action on a resource using ABAC.
+ * @refactorable false
+ * @classification Helper Utility
+ * @complexity Low
+ * @fingerprint exports:2,imports:1,sig:xe7cw6
+ * @lastUpdated 2026-06-23T23:04:58.994Z
+ */
+
 import { evaluateAccess, InsufficientPrivilegesError } from '@ajabadia/satellite-sdk';
 
 export interface AssertAccessParams {

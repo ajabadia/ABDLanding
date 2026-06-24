@@ -1,3 +1,13 @@
+/**
+ * @purpose Gestiona la solicitud GET para obtener una lista de inquilinos, asegurando el acceso industrial y autorización ABAC.
+ * @purpose_en Handles the GET request to retrieve a list of tenants, ensuring industrial access and ABAC authorization.
+ * @refactorable false
+ * @classification Business Service
+ * @complexity Medium
+ * @fingerprint exports:2,imports:4,sig:gjb4a2
+ * @lastUpdated 2026-06-21T16:08:02.232Z
+ */
+
 import { NextResponse } from 'next/server';
 import { ensureIndustrialAccess, getGlobalModel } from '@ajabadia/satellite-sdk';
 import { assertAccess } from '@/lib/abac';
