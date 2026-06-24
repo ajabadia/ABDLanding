@@ -37,10 +37,20 @@ interface SuiteApp {
   status: string;
 }
 
+const APP_ROUTES: Record<string, string> = {
+  analytics: '/analytics',
+  auth: '/auth',
+  logs: '/logs',
+  files: '/files',
+  quiz: '/quiz',
+  gobernanza: '/gobernanza',
+  cryptfile: '/cryptfile',
+};
+
 const getSuiteApps = (locale: string): SuiteApp[] => [
   {
     id: 'analytics',
-    href: `https://analytics.abdia.es`,
+    href: APP_ROUTES.analytics,
     icon: BarChart3,
     name: 'ABD Analytics',
     description: locale === 'es'
@@ -50,7 +60,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'auth',
-    href: `https://auth.abdia.es`,
+    href: APP_ROUTES.auth,
     icon: KeyRound,
     name: 'ABD Auth',
     description: locale === 'es'
@@ -60,7 +70,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'logs',
-    href: `https://logs.abdia.es`,
+    href: APP_ROUTES.logs,
     icon: ScrollText,
     name: 'ABD Logs',
     description: locale === 'es'
@@ -70,7 +80,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'files',
-    href: `https://files.abdia.es`,
+    href: APP_ROUTES.files,
     icon: FolderOpen,
     name: 'ABD Files',
     description: locale === 'es'
@@ -80,7 +90,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'quiz',
-    href: `https://quiz.abdia.es`,
+    href: APP_ROUTES.quiz,
     icon: BrainCircuit,
     name: 'ABD Quiz',
     description: locale === 'es'
@@ -90,7 +100,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'gobernanza',
-    href: `https://tenantgobernance.abdia.es`,
+    href: APP_ROUTES.gobernanza,
     icon: Users,
     name: locale === 'es' ? 'ABD Gobernanza' : 'ABD Governance',
     description: locale === 'es'
@@ -100,7 +110,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'cryptfile',
-    href: `https://cryptfile.abdia.es`,
+    href: APP_ROUTES.cryptfile,
     icon: Lock,
     name: 'ABD CryptFile',
     description: locale === 'es'
@@ -173,9 +183,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     return (
                       <a
                         key={app.id}
-                        href={app.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`/${locale}${app.href}`}
                         className="group p-6 bg-card border border-border rounded-xl flex flex-col gap-4 hover:border-primary/60 hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
                         aria-label={`${locale === 'es' ? 'Acceder a' : 'Access'} ${app.name}`}
                       >
@@ -197,7 +205,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         </div>
                         <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-widest text-muted-foreground/60 group-hover:text-primary/60 transition-colors mt-auto">
                           <Globe className="w-3 h-3" />
-                          <span>{app.href.replace('https://', '')}</span>
+                          <span>{`/${locale}${app.href}`}</span>
                           <ArrowRight className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                         </div>
                       </a>
@@ -269,7 +277,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         </div>
                         <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-widest text-muted-foreground/40 mt-auto">
                           <Globe className="w-3 h-3" />
-                          <span>{app.href.replace('https://', '')}</span>
+                          <span>{`/${locale}${app.href}`}</span>
                         </div>
                       </div>
                     );
