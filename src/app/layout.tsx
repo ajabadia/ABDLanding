@@ -4,14 +4,16 @@
  * @refactorable false
  * @classification UI Component
  * @complexity Medium
- * @fingerprint exports:2,imports:7,sig:7o367f
- * @lastUpdated 2026-06-24T10:31:16.924Z
+ * @fingerprint exports:2,imports:9,sig:1nqdwxx
+ * @lastUpdated 2026-06-25T10:23:18.629Z
  */
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
-import { getIndustrialSession, BrandingStyles, configureLogger } from "@ajabadia/satellite-sdk";
+import { getIndustrialSession } from '@ajabadia/satellite-sdk/auth-middleware';
+import { BrandingStyles } from '@ajabadia/satellite-sdk/styles';
+import { configureLogger } from '@ajabadia/satellite-sdk/logger';
 import { SessionProvider } from "@ajabadia/satellite-sdk/client";
 
 configureLogger({

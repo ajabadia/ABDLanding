@@ -4,8 +4,8 @@
  * @refactorable false
  * @classification UI Component
  * @complexity Medium
- * @fingerprint exports:1,imports:10,sig:oqsc0b
- * @lastUpdated 2026-06-21T16:08:18.157Z
+ * @fingerprint exports:1,imports:11,sig:19gq7o8
+ * @lastUpdated 2026-06-25T10:23:27.314Z
  */
 
 import { NextIntlClientProvider } from "next-intl";
@@ -18,7 +18,8 @@ import { SystemSettings } from "@/components/ui/SystemSettings";
 import { TenantSelector } from "@/components/ui/TenantSelector";
 import { LandingCommandPalette } from "@/components/layout/LandingCommandPalette";
 
-import { getIndustrialSession, resolveTenantBranding } from '@ajabadia/satellite-sdk';
+import { getIndustrialSession } from '@ajabadia/satellite-sdk/auth-middleware';
+import { resolveTenantBranding } from '@ajabadia/satellite-sdk/utils';
 
 export default async function LocaleLayout({
   children,

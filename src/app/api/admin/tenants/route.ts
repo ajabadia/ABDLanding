@@ -1,15 +1,16 @@
 /**
- * @purpose Gestiona la solicitud GET para obtener una lista de inquilinos, asegurando el acceso industrial y autorización ABAC.
- * @purpose_en Handles the GET request to retrieve a list of tenants, ensuring industrial access and ABAC authorization.
+ * @purpose Gestiona el solicitud GET para obtener una lista de inquilinos, asegurando acceso industrial y autorización ABAC.
+ * @purpose_en Manages the GET request to retrieve a list of tenants, ensuring industrial access and ABAC authorization.
  * @refactorable false
  * @classification Business Service
  * @complexity Medium
- * @fingerprint exports:2,imports:4,sig:gjb4a2
- * @lastUpdated 2026-06-21T16:08:02.232Z
+ * @fingerprint exports:2,imports:5,sig:jj129j
+ * @lastUpdated 2026-06-25T10:23:03.400Z
  */
 
 import { NextResponse } from 'next/server';
-import { ensureIndustrialAccess, getGlobalModel } from '@ajabadia/satellite-sdk';
+import { ensureIndustrialAccess } from '@ajabadia/satellite-sdk/auth-middleware';
+import { getGlobalModel } from '@ajabadia/satellite-sdk/db';
 import { assertAccess } from '@/lib/abac';
 import mongoose from 'mongoose';
 

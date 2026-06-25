@@ -4,8 +4,8 @@
  * @refactorable true (contains too many state variables and UI parts)
  * @classification UI Component
  * @complexity Medium
- * @fingerprint exports:1,imports:6,sig:9cfuhe
- * @lastUpdated 2026-06-22T06:28:15.654Z
+ * @fingerprint exports:1,imports:6,sig:ja09ir
+ * @lastUpdated 2026-06-25T10:23:35.756Z
  */
 
 import { getTranslations } from 'next-intl/server';
@@ -25,7 +25,8 @@ import {
 } from 'lucide-react';
 import { HeroHeader } from '@ajabadia/styles';
 import { GlobalFooter } from '@ajabadia/ecosystem-widgets';
-import { getIndustrialSession } from '@ajabadia/satellite-sdk';
+import { StorageProviderBadge } from '@/components/ui/StorageProviderBadge';
+import { getIndustrialSession } from '@ajabadia/satellite-sdk/auth-middleware';
 import Link from 'next/link';
 
 interface SuiteApp {
@@ -155,7 +156,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <main className="flex flex-col gap-16" id="servicios">
           {isAuthenticated && user ? (
             /* ================= AUTHENTICATED STATE: App Grid ================= */
-            <section aria-label={locale === 'es' ? 'Tus Aplicaciones Autorizadas' : 'Your Authorized Applications'}>
+            <><section aria-label={locale === 'es' ? 'Tus Aplicaciones Autorizadas' : 'Your Authorized Applications'}>
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-border/60">
                 <div className="flex flex-col gap-1">
                   <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary">
@@ -226,6 +227,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </div>
               )}
             </section>
+
+            <StorageProviderBadge /></>
           ) : (
             /* ================= UNAUTHENTICATED STATE: Marketing & Login ================= */
             <div className="flex flex-col gap-16">

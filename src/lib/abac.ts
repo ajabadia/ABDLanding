@@ -5,10 +5,10 @@
  * @classification Helper Utility
  * @complexity Low
  * @fingerprint exports:2,imports:1,sig:xe7cw6
- * @lastUpdated 2026-06-23T23:04:58.994Z
+ * @lastUpdated 2026-06-25T10:23:45.078Z
  */
 
-import { evaluateAccess, InsufficientPrivilegesError } from '@ajabadia/satellite-sdk';
+import { evaluateAccess, InsufficientPrivilegesError } from '@ajabadia/satellite-sdk/auth-middleware';
 
 export interface AssertAccessParams {
   userId: string;
