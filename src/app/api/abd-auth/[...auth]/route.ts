@@ -12,8 +12,8 @@ import { createAuthRouteHandler } from '@ajabadia/satellite-sdk/auth-middleware'
 import { NextRequest } from 'next/server';
 
 /**
- * 🛰️ Catch-All SSO Auth Route Handler
- * Manages /api/auth/session, /api/auth/logout, and /api/auth/federated/callback dynamically.
+ * Catch-All SSO Auth Route Handler
+ * Manages /api/abd-auth/session, /api/abd-auth/logout, and /api/abd-auth/federated/callback dynamically.
  */
 const handler = createAuthRouteHandler({
   appId: process.env.NEXT_PUBLIC_APP_ID as string,
