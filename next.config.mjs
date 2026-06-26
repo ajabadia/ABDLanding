@@ -9,52 +9,52 @@ const nextConfig = {
     return [
       {
         source: '/:locale/auth/:path*',
-        destination: `${process.env.AUTH_PROVIDER_URL || 'https://abd-auth.vercel.app'}/:locale/auth/:path*`,
+        destination: `${process.env.AUTH_PROVIDER_URL || 'https://auth.abdia.es'}/:locale/:path*`,
       },
       {
         source: '/:locale/quiz/:path*',
-        destination: `${process.env.QUIZ_URL || 'https://abd-quiz.vercel.app'}/:locale/quiz/:path*`,
+        destination: `${process.env.QUIZ_URL || 'https://quiz.abdia.es'}/:locale/:path*`,
       },
       {
         source: '/:locale/gobernanza/:path*',
-        destination: `${process.env.GOVERNANCE_URL || 'https://abd-tenant-gobernance.vercel.app'}/:locale/gobernanza/:path*`,
+        destination: `${process.env.GOVERNANCE_URL || 'https://tenantgobernance.abdia.es'}/:locale/:path*`,
       },
       {
         source: '/:locale/files/:path*',
-        destination: `${process.env.FILES_URL || 'https://abd-files.vercel.app'}/:locale/files/:path*`,
+        destination: `${process.env.FILES_URL || 'https://files.abdia.es'}/:locale/:path*`,
       },
       {
         source: '/:locale/analytics/:path*',
-        destination: `${process.env.ANALYTICS_URL || 'https://abd-analytics.vercel.app'}/:locale/analytics/:path*`,
+        destination: `${process.env.ANALYTICS_URL || 'https://analytics.abdia.es'}/:locale/:path*`,
       },
       {
         source: '/:locale/logs/:path*',
-        destination: `${process.env.LOGS_URL || 'https://abd-logs.vercel.app'}/:locale/logs/:path*`,
+        destination: `${process.env.LOGS_URL || 'https://logs.abdia.es'}/:locale/:path*`,
       },
       // Non-localized routes (API, static, etc.)
       {
         source: '/auth/:path*',
-        destination: `${process.env.AUTH_PROVIDER_URL || 'https://abd-auth.vercel.app'}/auth/:path*`,
+        destination: `${process.env.AUTH_PROVIDER_URL || 'https://auth.abdia.es'}/:path*`,
       },
       {
         source: '/quiz/:path*',
-        destination: `${process.env.QUIZ_URL || 'https://abd-quiz.vercel.app'}/quiz/:path*`,
+        destination: `${process.env.QUIZ_URL || 'https://quiz.abdia.es'}/:path*`,
       },
       {
         source: '/gobernanza/:path*',
-        destination: `${process.env.GOVERNANCE_URL || 'https://abd-tenant-gobernance.vercel.app'}/gobernanza/:path*`,
+        destination: `${process.env.GOVERNANCE_URL || 'https://tenantgobernance.abdia.es'}/:path*`,
       },
       {
         source: '/files/:path*',
-        destination: `${process.env.FILES_URL || 'https://abd-files.vercel.app'}/files/:path*`,
+        destination: `${process.env.FILES_URL || 'https://files.abdia.es'}/:path*`,
       },
       {
         source: '/analytics/:path*',
-        destination: `${process.env.ANALYTICS_URL || 'https://abd-analytics.vercel.app'}/analytics/:path*`,
+        destination: `${process.env.ANALYTICS_URL || 'https://analytics.abdia.es'}/:path*`,
       },
       {
         source: '/logs/:path*',
-        destination: `${process.env.LOGS_URL || 'https://abd-logs.vercel.app'}/logs/:path*`,
+        destination: `${process.env.LOGS_URL || 'https://logs.abdia.es'}/:path*`,
       },
     ];
   },
