@@ -46,7 +46,7 @@ export function SystemSettings({ isAuthenticated = false }: SystemSettingsProps)
   };
 
   const handleLogout = () => {
-    window.location.href = '/api/auth/logout';
+    window.location.href = '/api/abd-auth/logout';
   };
 
   return (
