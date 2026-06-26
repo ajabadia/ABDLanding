@@ -53,7 +53,7 @@ const APP_URLS: Record<string, string> = {
 const getSuiteApps = (locale: string): SuiteApp[] => [
   {
     id: 'analytics',
-    href: APP_ROUTES.analytics,
+    href: `${APP_URLS.analytics}/${locale}`,
     icon: BarChart3,
     name: 'ABD Analytics',
     description: locale === 'es'
@@ -63,7 +63,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'auth',
-    href: APP_ROUTES.auth,
+    href: `${APP_URLS.auth}/${locale}`,
     icon: KeyRound,
     name: 'ABD Auth',
     description: locale === 'es'
@@ -73,7 +73,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'logs',
-    href: APP_ROUTES.logs,
+    href: `${APP_URLS.logs}/${locale}`,
     icon: ScrollText,
     name: 'ABD Logs',
     description: locale === 'es'
@@ -83,7 +83,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'files',
-    href: APP_ROUTES.files,
+    href: `${APP_URLS.files}/${locale}`,
     icon: FolderOpen,
     name: 'ABD Files',
     description: locale === 'es'
@@ -93,7 +93,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'quiz',
-    href: APP_ROUTES.quiz,
+    href: `${APP_URLS.quiz}/${locale}`,
     icon: BrainCircuit,
     name: 'ABD Quiz',
     description: locale === 'es'
@@ -103,7 +103,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'gobernanza',
-    href: APP_ROUTES.gobernanza,
+    href: `${APP_URLS.gobernanza}/${locale}`,
     icon: Users,
     name: locale === 'es' ? 'ABD Gobernanza' : 'ABD Governance',
     description: locale === 'es'
@@ -113,7 +113,7 @@ const getSuiteApps = (locale: string): SuiteApp[] => [
   },
   {
     id: 'cryptfile',
-    href: APP_ROUTES.cryptfile,
+    href: `${APP_URLS.cryptfile}/${locale}`,
     icon: Lock,
     name: 'ABD CryptFile',
     description: locale === 'es'
@@ -186,7 +186,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     return (
                       <a
                         key={app.id}
-                        href={`/${locale}${app.href}`}
+                        href={app.href}
                         className="group p-6 bg-card border border-border rounded-xl flex flex-col gap-4 hover:border-primary/60 hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
                         aria-label={`${locale === 'es' ? 'Acceder a' : 'Access'} ${app.name}`}
                       >
@@ -208,7 +208,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         </div>
                         <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-widest text-muted-foreground/60 group-hover:text-primary/60 transition-colors mt-auto">
                           <Globe className="w-3 h-3" />
-                          <span>{`/${locale}${app.href}`}</span>
+                          <span>{app.href}</span>
                           <ArrowRight className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                         </div>
                       </a>
@@ -282,7 +282,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         </div>
                         <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-widest text-muted-foreground/40 mt-auto">
                           <Globe className="w-3 h-3" />
-                          <span>{`/${locale}${app.href}`}</span>
+                          <span>{app.href}</span>
                         </div>
                       </div>
                     );
