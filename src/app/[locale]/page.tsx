@@ -38,14 +38,16 @@ interface SuiteApp {
   status: string;
 }
 
-const APP_ROUTES: Record<string, string> = {
-  analytics: '/analytics',
-  auth: '/auth',
-  logs: '/logs',
-  files: '/files',
-  quiz: '/quiz',
-  gobernanza: '/gobernanza',
-  cryptfile: '/cryptfile',
+const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'abdia.es';
+
+const APP_URLS: Record<string, string> = {
+  analytics: process.env.ANALYTICS_URL || `https://analytics.${ROOT_DOMAIN}`,
+  auth:      process.env.AUTH_PROVIDER_URL || `https://auth.${ROOT_DOMAIN}`,
+  logs:      process.env.LOGS_URL || `https://logs.${ROOT_DOMAIN}`,
+  files:     process.env.FILES_URL || `https://files.${ROOT_DOMAIN}`,
+  quiz:      process.env.QUIZ_URL || `https://quiz.${ROOT_DOMAIN}`,
+  gobernanza: process.env.GOVERNANCE_URL || `https://tenantgobernance.${ROOT_DOMAIN}`,
+  cryptfile: `https://crypt.${ROOT_DOMAIN}`,
 };
 
 const getSuiteApps = (locale: string): SuiteApp[] => [

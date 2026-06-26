@@ -7,17 +7,19 @@
  * @classification UI Component
  * @complexity Low
  * @fingerprint exports:1,imports:2,sig:14z1m65
- * @lastUpdated 2026-06-25T11:51:14.682Z
+ * @lastUpdated 2026-06-26T10:00:12.052Z
  */
 
 import { useState, useEffect } from 'react';
 import { HardDrive } from 'lucide-react';
 
+const FILES_BASE = process.env.NEXT_PUBLIC_FILES_URL || 'https://files.abdia.es';
+
 export function StorageProviderBadge() {
   const [provider, setProvider] = useState('CARGANDO...');
 
   useEffect(() => {
-    fetch('/files/api/v1/storage/active-provider')
+    fetch(`${FILES_BASE}/api/v1/storage/active-provider`, { credentials: 'include' })
       .then(r => r.ok ? r.json() : { provider: 'CLOUDINARY' })
       .then(d => setProvider(d.provider || 'CLOUDINARY'))
       .catch((e) => {
