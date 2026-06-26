@@ -13,7 +13,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@ajabadia/i18n": "workspace:*",
+    "@ajabadia/i18n": "^1.0.37",
     "@ajabadia/ecosystem-widgets": "^1.0.10",
     "@ajabadia/satellite-sdk": "^1.0.81",
     "@ajabadia/styles": "^1.0.15",
